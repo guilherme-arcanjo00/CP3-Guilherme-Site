@@ -2,7 +2,6 @@
 
 **Autor:** Guilherme Arcanjo Barra
 **Curso:** Análise e Desenvolvimento de Sistemas (ADS) — Centro Universitário Braz Cubas
-**Turma:** _(preencher com a turma antes de compactar o .zip)_
 
 ## Sobre o projeto
 
