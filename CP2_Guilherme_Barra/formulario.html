@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guilherme Arcanjo Barra — Contato</title>
+    <meta name="description" content="Formulário de contato de Guilherme Arcanjo Barra.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <header class="cabecalho-site">
+        <div class="wrapper">
+            <div class="identidade">
+                <img src="img/foto-guilherme.jpg" alt="Foto de Guilherme Arcanjo Barra">
+                <div>
+                    <h1>Guilherme Arcanjo Barra</h1>
+                    <p class="cargo">estudante de ADS &middot; São Paulo, SP</p>
+                </div>
+            </div>
+            <nav class="menu-principal" aria-label="Navegação principal">
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="curriculo.html">Currículo</a></li>
+                    <li><a href="formulario.html" aria-current="page">Contato</a></li>
+                    <li><a href="multimidia.html">Multimídia</a></li>
+                    <li><a href="graficos.html">Gráficos</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="wrapper">
+            <div class="pagina-titulo">
+                <h2>Fale comigo</h2>
+                <p>Preencha o formulário abaixo para enviar uma mensagem. Todos os campos marcados como
+                    obrigatórios precisam ser preenchidos.</p>
+            </div>
+
+            <section aria-labelledby="titulo-formulario">
+                <h2 id="titulo-formulario" class="visualmente-oculto">Formulário de contato</h2>
+                <article class="cartao">
+                    <form action="#" method="post">
+                        <div class="linha-campos">
+                            <div class="campo">
+                                <label for="nome">Nome completo</label>
+                                <input type="text" id="nome" name="nome" required minlength="3" placeholder="Seu nome">
+                            </div>
+
+                            <div class="campo">
+                                <label for="email">E-mail</label>
+                                <input type="email" id="email" name="email" required placeholder="voce@exemplo.com">
+                            </div>
+                        </div>
+
+                        <div class="linha-campos">
+                            <div class="campo">
+                                <label for="telefone">Telefone</label>
+                                <input type="tel" id="telefone" name="telefone" pattern="[0-9()\-\s]{8,15}" placeholder="(11) 96970-3224">
+                                <p class="ajuda">Formato sugerido: (DDD) número.</p>
+                            </div>
+
+                            <div class="campo">
+                                <label for="nascimento">Data de nascimento</label>
+                                <input type="date" id="nascimento" name="nascimento">
+                            </div>
+                        </div>
+
+                        <div class="campo">
+                            <label for="assunto">Assunto</label>
+                            <select id="assunto" name="assunto" required>
+                                <option value="">Selecione um assunto</option>
+                                <option value="oportunidade">Oportunidade de estágio</option>
+                                <option value="projeto">Projeto ou colaboração</option>
+                                <option value="duvida">Dúvida sobre o currículo</option>
+                                <option value="outro">Outro</option>
+                            </select>
+                        </div>
+
+                        <div class="campo">
+                            <fieldset>
+                                <legend>Como prefere que eu responda?</legend>
+                                <div class="opcoes-linha">
+                                    <label><input type="radio" name="preferencia" value="email" checked> E-mail</label>
+                                    <label><input type="radio" name="preferencia" value="telefone"> Telefone</label>
+                                    <label><input type="radio" name="preferencia" value="linkedin"> LinkedIn</label>
+                                </div>
+                            </fieldset>
+                        </div>
+
+                        <div class="campo">
+                            <fieldset>
+                                <legend>Temas de interesse (opcional)</legend>
+                                <div class="opcoes-linha">
+                                    <label><input type="checkbox" name="temas" value="estagio"> Estágio</label>
+                                    <label><input type="checkbox" name="temas" value="freelance"> Projeto freelance</label>
+                                    <label><input type="checkbox" name="temas" value="mentoria"> Mentoria</label>
+                                </div>
+                            </fieldset>
+                        </div>
+
+                        <div class="campo">
+                            <label for="mensagem">Mensagem</label>
+                            <textarea id="mensagem" name="mensagem" required minlength="10" placeholder="Escreva sua mensagem aqui"></textarea>
+                        </div>
+
+                        <button type="submit">Enviar mensagem</button>
+                    </form>
+                </article>
+            </section>
+        </div>
+    </main>
+
+    <footer class="rodape-site">
+        <div class="wrapper">
+            <p>Site pessoal desenvolvido em HTML5 semântico e CSS.</p>
+            <ul>
+                <li><a href="mailto:guiarcanjo10@gmail.com">E-mail</a></li>
+                <li><a href="https://github.com/guilherme-arcanjo00" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+                <li><a href="https://www.linkedin.com/in/guilherme-arcanjo-2a82b7312/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>

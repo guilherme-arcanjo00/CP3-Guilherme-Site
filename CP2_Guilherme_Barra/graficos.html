@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guilherme Arcanjo Barra — Gráficos</title>
+    <meta name="description" content="Página de gráficos de Guilherme Arcanjo Barra: desenho em canvas e gráfico em SVG.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <header class="cabecalho-site">
+        <div class="wrapper">
+            <div class="identidade">
+                <img src="img/foto-guilherme.jpg" alt="Foto de Guilherme Arcanjo Barra">
+                <div>
+                    <h1>Guilherme Arcanjo Barra</h1>
+                    <p class="cargo">estudante de ADS &middot; São Paulo, SP</p>
+                </div>
+            </div>
+            <nav class="menu-principal" aria-label="Navegação principal">
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="curriculo.html">Currículo</a></li>
+                    <li><a href="formulario.html">Contato</a></li>
+                    <li><a href="multimidia.html">Multimídia</a></li>
+                    <li><a href="graficos.html" aria-current="page">Gráficos</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="wrapper">
+            <div class="pagina-titulo">
+                <h2>Gráficos</h2>
+                <p>Um desenho gerado em canvas via JavaScript e um gráfico em SVG estilizado com CSS.</p>
+            </div>
+
+            <section aria-labelledby="titulo-canvas">
+                <h2 id="titulo-canvas">Desenho em canvas</h2>
+                <article class="cartao">
+                    <p>
+                        O desenho abaixo é gerado por JavaScript diretamente no elemento <code>&lt;canvas&gt;</code>:
+                        um pequeno "cartão de perfil" com formas geométricas simples.
+                    </p>
+                    <canvas id="area-desenho" width="640" height="280"
+                        role="img" aria-label="Ilustração geométrica gerada em canvas, com um círculo representando um avatar e barras coloridas ao lado">
+                        Seu navegador não suporta o elemento canvas.
+                    </canvas>
+                </article>
+            </section>
+
+            <section aria-labelledby="titulo-svg">
+                <h2 id="titulo-svg">Gráfico em SVG</h2>
+                <article class="cartao">
+                    <p>Gráfico de barras simples, em SVG, mostrando horas de estudo semanais por área do curso.</p>
+
+                    <svg class="grafico-svg" viewBox="0 0 420 240" width="100%" height="240"
+                        role="img" aria-label="Gráfico de barras com horas de estudo semanais por área: Lógica 6 horas, Web 8 horas, Banco de dados 4 horas, Inglês 3 horas">
+                        <line class="eixo" x1="40" y1="10" x2="40" y2="200"></line>
+                        <line class="eixo" x1="40" y1="200" x2="400" y2="200"></line>
+
+                        <rect class="barra" x="60" y="140" width="50" height="60"></rect>
+                        <text x="85" y="216" text-anchor="middle">Lógica</text>
+                        <text x="85" y="132" text-anchor="middle">6h</text>
+
+                        <rect class="barra" x="140" y="120" width="50" height="80"></rect>
+                        <text x="165" y="216" text-anchor="middle">Web</text>
+                        <text x="165" y="112" text-anchor="middle">8h</text>
+
+                        <rect class="barra" x="220" y="160" width="50" height="40"></rect>
+                        <text x="245" y="216" text-anchor="middle">Banco</text>
+                        <text x="245" y="152" text-anchor="middle">4h</text>
+
+                        <rect class="barra" x="300" y="170" width="50" height="30"></rect>
+                        <text x="325" y="216" text-anchor="middle">Inglês</text>
+                        <text x="325" y="162" text-anchor="middle">3h</text>
+                    </svg>
+                </article>
+            </section>
+        </div>
+    </main>
+
+    <footer class="rodape-site">
+        <div class="wrapper">
+            <p>Site pessoal desenvolvido em HTML5 semântico e CSS.</p>
+            <ul>
+                <li><a href="mailto:guiarcanjo10@gmail.com">E-mail</a></li>
+                <li><a href="https://github.com/guilherme-arcanjo00" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+                <li><a href="https://www.linkedin.com/in/guilherme-arcanjo-2a82b7312/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script>
+        (function () {
+            var canvas = document.getElementById("area-desenho");
+            if (!canvas || !canvas.getContext) return;
+            var ctx = canvas.getContext("2d");
+
+            // fundo
+            ctx.fillStyle = "#ffffff";
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            // "avatar" circular
+            ctx.beginPath();
+            ctx.arc(100, 140, 60, 0, Math.PI * 2);
+            ctx.fillStyle = "#2F6F5E";
+            ctx.fill();
+
+            ctx.fillStyle = "#F5F6F3";
+            ctx.font = "600 32px Arial";
+            ctx.textAlign = "center";
+            ctx.textBaseline = "middle";
+            ctx.fillText("GA", 100, 144);
+
+            // barras representando níveis de estudo
+            var barras = [
+                { label: "Lógica", altura: 90, cor: "#2F6F5E" },
+                { label: "Web", altura: 130, cor: "#E2A33D" },
+                { label: "Banco", altura: 60, cor: "#16202B" },
+                { label: "Inglês", altura: 40, cor: "#8fae9f" }
+            ];
+
+            var baseX = 220;
+            var baseY = 240;
+            var largura = 60;
+            var espaco = 30;
+
+            barras.forEach(function (barra, indice) {
+                var x = baseX + indice * (largura + espaco);
+                var y = baseY - barra.altura;
+
+                ctx.fillStyle = barra.cor;
+                ctx.fillRect(x, y, largura, barra.altura);
+
+                ctx.fillStyle = "#16202B";
+                ctx.font = "12px monospace";
+                ctx.fillText(barra.label, x + largura / 2, baseY + 16);
+            });
+
+            // linha de base
+            ctx.strokeStyle = "#D8DCD3";
+            ctx.beginPath();
+            ctx.moveTo(200, baseY);
+            ctx.lineTo(600, baseY);
+            ctx.stroke();
+        })();
+    </script>
+</body>
+</html>

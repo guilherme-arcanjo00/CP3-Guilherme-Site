@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guilherme Arcanjo Barra — Multimídia</title>
+    <meta name="description" content="Página de multimídia de Guilherme Arcanjo Barra: vídeo, áudio e mapa incorporado.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <header class="cabecalho-site">
+        <div class="wrapper">
+            <div class="identidade">
+                <img src="img/foto-guilherme.jpg" alt="Foto de Guilherme Arcanjo Barra">
+                <div>
+                    <h1>Guilherme Arcanjo Barra</h1>
+                    <p class="cargo">estudante de ADS &middot; São Paulo, SP</p>
+                </div>
+            </div>
+            <nav class="menu-principal" aria-label="Navegação principal">
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="curriculo.html">Currículo</a></li>
+                    <li><a href="formulario.html">Contato</a></li>
+                    <li><a href="multimidia.html" aria-current="page">Multimídia</a></li>
+                    <li><a href="graficos.html">Gráficos</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="wrapper">
+            <div class="pagina-titulo">
+                <h2>Multimídia</h2>
+                <p>Um vídeo, um áudio e um mapa incorporado por iframe.</p>
+            </div>
+
+            <section aria-labelledby="titulo-video">
+                <h2 id="titulo-video">Vídeo</h2>
+                <article class="cartao">
+                    <p>Vídeo de exemplo, exibido diretamente na página com os controles nativos do navegador.</p>
+                    <div class="midia-caixa">
+                        <video controls preload="metadata" poster="">
+                            <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
+                            Seu navegador não suporta a exibição deste vídeo.
+                        </video>
+                    </div>
+                </article>
+            </section>
+
+            <section aria-labelledby="titulo-audio">
+                <h2 id="titulo-audio">Áudio</h2>
+                <article class="cartao">
+                    <p>Faixa de áudio de exemplo, também com os controles nativos do navegador.</p>
+                    <div class="midia-caixa">
+                        <audio controls preload="metadata">
+                            <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3" type="audio/mpeg">
+                            Seu navegador não suporta a reprodução deste áudio.
+                        </audio>
+                    </div>
+                </article>
+            </section>
+
+            <section aria-labelledby="titulo-embed">
+                <h2 id="titulo-embed">Vídeo incorporado</h2>
+                <article class="cartao">
+                    <p>Curta-metragem "Big Buck Bunny" (Blender Foundation, licença Creative Commons), incorporado por iframe direto do YouTube.</p>
+                    <div class="midia-caixa">
+                        <iframe
+                            src="https://www.youtube.com/embed/aqz-KE-bpKQ"
+                            title="Big Buck Bunny — curta-metragem da Blender Foundation"
+                            loading="lazy"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </article>
+            </section>
+        </div>
+    </main>
+
+    <footer class="rodape-site">
+        <div class="wrapper">
+            <p>Site pessoal desenvolvido em HTML5 semântico e CSS.</p>
+            <ul>
+                <li><a href="mailto:guiarcanjo10@gmail.com">E-mail</a></li>
+                <li><a href="https://github.com/guilherme-arcanjo00" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+                <li><a href="https://www.linkedin.com/in/guilherme-arcanjo-2a82b7312/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>
